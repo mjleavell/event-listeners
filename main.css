@@ -1,0 +1,16 @@
+.large {
+    font-size: 40px;
+}
+
+.blue {
+    color: blue;
+}
+
+.bordered {
+    border: 3px lightcoral dashed;
+}
+
+.rounded {
+    border-radius: 6px;
+    border: 1px solid black;
+}

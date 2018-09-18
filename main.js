@@ -53,8 +53,8 @@ header.addEventListener("mouseout", handleHeaderMouseOut)
  */
 var fieldEl = document.getElementById("keypress-input")
 
-fieldEl.addEventListener("keyup", function (event) {
-    outputEl.innerHTML = event.target.value
+fieldEl.addEventListener("keyup", function (e) {
+    outputEl.innerHTML = e.target.value
 })
 
 
@@ -101,5 +101,18 @@ document.getElementById("add-rounding").addEventListener("click", function() {
   elements in one function.
  */
 document.querySelector("body").addEventListener("click", function(event) {
-    console.log("You clicked on the body of the DOM")
+
+    if (event.target.classList.contains('article-section')) {
+        // poke();
+        console.log("You clicked on the body of the DOM")
+
+    }
 })
+
+// can add an event listener to a list so have ot use for loop
+const myFriendElems = document.getElementsByClassName('friends');
+
+for (let i=0; i < myFriendElems.length; i++) {
+    const element = myFriendElems[i];
+    element.addEventListener('click', poke);
+}
