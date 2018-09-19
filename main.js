@@ -5,12 +5,17 @@ const notesInputElem = document.getElementById('notesInput');
 const submitToDoButtonElem = document.getElementById('submitToDoButton');
 
 const activateDeletes = () => {
-    // const deleteButtons = document.getElementsByClassName('deleteButton');
-    console.log(deleteButtons);
+    const deleteButtons = document.getElementsByClassName('deleteButton');
+    // console.log(deleteButtons);
     for (let i = 0; i < deleteButtons.length; i++) {
         const element = deleteButtons[i];
-        element.addEventListener('click', () => {
-            console.log('they clicked delete!');
+        element.addEventListener('click', (e) => {
+            // card of the delete button clicked
+            const buttonIClicked = e.target;
+            // card that the button was on 
+            // parentNode will give you immediate parent of the button then div  
+            const cardToDelete = buttonIClicked.parentNode.parentNode;
+            cardToDelete.remove();
         })
     }
 }
