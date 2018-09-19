@@ -6,7 +6,7 @@ const submitToDoButtonElem = document.getElementById('submitToDoButton');
 
 const activateDeletes = () => {
     const deleteButtons = document.getElementsByClassName('deleteButton');
-    // console.log(deleteButtons);
+    console.log(deleteButtons);
     for (let i = 0; i < deleteButtons.length; i++) {
         const element = deleteButtons[i];
         element.addEventListener('click', (e) => {
@@ -25,11 +25,11 @@ const printToDom = (stringToPrint, whereToPrint) => {
 }
 
 const buildNewToDoCard = (toDo, notes) => {
-    let domString = `<div class="card" style="width: 18rem;">
+    let domString = `<div class="card bg-light w-25 m-2">
     <div class="card-body">
       <h5 class="card-title">${toDo}</h5>
       <p class="card-text">${notes}</p>
-      <button href="#" class="btn btn-primary deleteButton">Delete Card</button>
+      <button href="#" class="btn btn-danger deleteButton">Delete Card</button>
     </div>
   </div>`;
 
@@ -39,6 +39,7 @@ const buildNewToDoCard = (toDo, notes) => {
 }
 
 submitToDoButtonElem.addEventListener('click', (e) => {
+    // button within forms are when we need to use prevent default
     e.preventDefault();
     // .value is how we capture information from forms
     buildNewToDoCard(toDoInputElem.value, notesInputElem.value);
